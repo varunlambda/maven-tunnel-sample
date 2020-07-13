@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="40" name="LambaTestSuite" parallel="tests">
+
+	<listeners>
+		<listener class-name="com.lambdatest.tunnel.MavenParallel"/>
+	</listeners>
+	
+   <test name="1 Chrome 12">
+   <parameter name="browser" value="Chrome"/>
+      <parameter name="version" value="latest"/>
+        <parameter name="platform" value="Windows 10"/>
+        <parameter name="resolution" value="1600x1200"/>
+        <classes>
+            <class name="com.lambdatest.tunnel.MavenParallel"/>
+        </classes>
+    </test> 
+    
+   <test name="2 Chrome 12">
+   <parameter name="browser" value="Chrome"/>
+      <parameter name="version" value="latest-1"/>
+        <parameter name="platform" value="Windows 8.1"/>
+        <parameter name="resolution" value="1920x1080"/>
+        <classes>
+            <class name="com.lambdatest.tunnel.MavenParallel"/>
+        </classes>
+    </test> 
+    
+   <test name="3 Chrome 12">
+   <parameter name="browser" value="Chrome"/>
+      <parameter name="version" value="latest-2"/>
+        <parameter name="platform" value="Windows 8"/>
+        <parameter name="resolution" value="2048x1536"/>
+        <classes>
+            <class name="com.lambdatest.tunnel.MavenParallel"/>
+        </classes>
+    </test> 
+    
+   <test name="4 Chrome 12">
+   <parameter name="browser" value="Chrome"/>
+      <parameter name="version" value="latest-3"/>
+        <parameter name="platform" value="Windows 7"/>
+        <parameter name="resolution" value="2560x1440"/>
+        <classes>
+            <class name="com.lambdatest.tunnel.MavenParallel"/>
+        </classes>
+    </test> 
+    </suite>
