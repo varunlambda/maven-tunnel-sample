@@ -18,3 +18,8 @@ settings.xml
 tunnel.log
 
 /target/
+.idea
+.lambdatest
+lt.log
+ltcupdate
+tunnel.log

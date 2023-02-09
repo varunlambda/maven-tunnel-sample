@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="40" name="LambaTestSuite" parallel="tests">
+<suite thread-count="10" name="suiteXmlFile" parallel="tests">
 
-	<listeners>
-		<listener class-name="com.lambdatest.tunnel.MavenParallel"/>
-	</listeners>
-	
-   <test name="1 Chrome 12">
-   <parameter name="browser" value="Chrome"/>
-      <parameter name="version" value="latest"/>
+    <listeners>
+        <listener class-name="com.lambdatest.tunnel.MavenParallel"/>
+    </listeners>
+
+    <test name="1 Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="version" value="latest"/>
         <parameter name="platform" value="Windows 10"/>
         <parameter name="resolution" value="1600x1200"/>
         <classes>
             <class name="com.lambdatest.tunnel.MavenParallel"/>
         </classes>
-    </test> 
-    
-   <test name="2 Chrome 12">
-   <parameter name="browser" value="Chrome"/>
-      <parameter name="version" value="latest-1"/>
-        <parameter name="platform" value="Windows 8.1"/>
+    </test>
+
+    <test name="2 Firefox">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="version" value="latest"/>
+        <parameter name="platform" value="Windows 11"/>
         <parameter name="resolution" value="1920x1080"/>
         <classes>
             <class name="com.lambdatest.tunnel.MavenParallel"/>
         </classes>
-    </test> 
-    
-   <test name="3 Chrome 12">
-   <parameter name="browser" value="Chrome"/>
-      <parameter name="version" value="latest-2"/>
-        <parameter name="platform" value="Windows 8"/>
+    </test>
+
+    <test name="3 Safari">
+        <parameter name="browser" value="Safari"/>
+        <parameter name="version" value="latest"/>
+        <parameter name="platform" value="Monterey"/>
         <parameter name="resolution" value="2048x1536"/>
         <classes>
             <class name="com.lambdatest.tunnel.MavenParallel"/>
         </classes>
-    </test> 
-    
-   <test name="4 Chrome 12">
-   <parameter name="browser" value="Chrome"/>
-      <parameter name="version" value="latest-3"/>
+    </test>
+
+    <test name="4 Edge">
+        <parameter name="browser" value="edge"/>
+        <parameter name="version" value="latest"/>
         <parameter name="platform" value="Windows 7"/>
         <parameter name="resolution" value="2560x1440"/>
         <classes>
             <class name="com.lambdatest.tunnel.MavenParallel"/>
         </classes>
-    </test> 
-    </suite>
+    </test>
+</suite>
