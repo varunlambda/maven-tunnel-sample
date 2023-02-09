@@ -21,29 +21,6 @@ public class MavenParallel implements IExecutionListener {
   String accessKey = System.getenv("LT_ACCESS_KEY");
   Tunnel t;
 
-<<<<<<< HEAD
-    public RemoteWebDriver driver = null;
-    String status = "passed";
-    String username = System.getenv("LT_USERNAME");
-    String accessKey = System.getenv("LT_ACCESS_KEY");
-    Tunnel t;
-    
-    /* (non-Javadoc)
-     * @see org.testng.IExecutionListener#onExecutionStart()
-     */
-    @Override
-    public void onExecutionStart() {
-	try {
-	      //start the tunnel
-	      t = new Tunnel();
-	      HashMap<String, String> options = new HashMap<String, String>();
-	      options.put("user", username);
-	      options.put("key", accessKey);
-	      t.start(options);
-	} catch (Exception e) {
-	      e.printStackTrace();
-	}
-=======
   @Override
   public void onExecutionStart() {
     try {
@@ -55,7 +32,6 @@ public class MavenParallel implements IExecutionListener {
       t.start(options);
     } catch (Exception e) {
       e.printStackTrace();
->>>>>>> 7c9f648 (Fixes for starting test)
     }
   }
 
