@@ -2,10 +2,7 @@ package com.lambdatest.tunnel;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.sql.Timestamp;
 import java.util.HashMap;
-import java.util.Random;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
