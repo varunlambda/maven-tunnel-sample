@@ -49,7 +49,11 @@ Some Safari & IE browsers, doesn't support automatic resolution of the URL strin
     - Navigate to maven-tunnel-sample
     - Run following command
    
-    ```mvn clean install``` OR ```mvn test```
+    - To run single test
+      `mvn test -DsuiteXmlFile=MavenSingle.xml`
+
+    - To run parallel tests
+      `mvn test -DsuiteXmlFile=MavenParallel.xml`
    
  ### Note: You can also mention your LambdaTest credentials in env/default.properties file
 

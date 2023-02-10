@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="suiteXmlFile" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.lambdatest.tunnel.MavenSingle"/>
+    </listeners>
+
+    <test name="1 Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="version" value="latest"/>
+        <parameter name="platform" value="Windows 10"/>
+        <parameter name="resolution" value="1600x1200"/>
+        <classes>
+            <class name="com.lambdatest.tunnel.MavenSingle"/>
+        </classes>
+    </test>
+</suite>
