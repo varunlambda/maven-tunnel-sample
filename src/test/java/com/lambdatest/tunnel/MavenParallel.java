@@ -2,7 +2,10 @@ package com.lambdatest.tunnel;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.Random;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -29,6 +32,7 @@ public class MavenParallel implements IExecutionListener {
       HashMap<String, String> options = new HashMap<String, String>();
       options.put("user", username);
       options.put("key", accessKey);
+      options.put("tunnelName", "MavenParallel");
       t.start(options);
     } catch (Exception e) {
       e.printStackTrace();
@@ -49,6 +53,7 @@ public class MavenParallel implements IExecutionListener {
     capabilities.setCapability("network", true);
     capabilities.setCapability("console", true);
     capabilities.setCapability("visual", true);
+    capabilities.setCapability("tunnelName", "MavenParallel");
 
     try {
       driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub"),
