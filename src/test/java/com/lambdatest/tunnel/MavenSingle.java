@@ -23,24 +23,26 @@ public class MavenSingle implements IExecutionListener {
   String access_key = System.getenv("LT_ACCESS_KEY");
 
   @BeforeTest
-  public void setUp() throws Exception {
-
+  @org.testng.annotations.Parameters(value = { "browser", "version", "platform", "resolution" })
+  public void setUp(String browser, String version, String platform, String resolution) throws Exception {
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("build", "Single Maven Tunnel");
     capabilities.setCapability("name", "Maven Tunnel");
-    capabilities.setCapability("platform", "Windows 10");
-    capabilities.setCapability("browserName", "Chrome");
-    capabilities.setCapability("version", "latest");
+    capabilities.setCapability("browserName", browser);
+    capabilities.setCapability("version", version);
+    capabilities.setCapability("platform", platform);
     capabilities.setCapability("tunnel", true);
     capabilities.setCapability("network", true);
     capabilities.setCapability("console", true);
     capabilities.setCapability("visual", true);
+    capabilities.setCapability("tunnelName", "MavenSingle");
 
     //create tunnel instance
     t = new Tunnel();
     HashMap<String, String> options = new HashMap<String, String>();
     options.put("user", username);
     options.put("key", access_key);
+    options.put("tunnelName", "MavenSingle");
 
     //start tunnel
     t.start(options);
