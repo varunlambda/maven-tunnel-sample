@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.github.lambdatest</groupId>
             <artifactId>lambdatest-tunnel-binary</artifactId>
-            <version>1.0.15</version>
+            <version>1.0.16</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
