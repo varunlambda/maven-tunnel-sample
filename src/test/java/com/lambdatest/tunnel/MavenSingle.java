@@ -11,7 +11,6 @@ import org.testng.IExecutionListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.lambdatest.tunnel.Tunnel;
 
 public class MavenSingle implements IExecutionListener {
   Tunnel t;
@@ -37,23 +36,23 @@ public class MavenSingle implements IExecutionListener {
     capabilities.setCapability("visual", true);
     capabilities.setCapability("tunnelName", "MavenSingle");
 
-    //create tunnel instance
+    // create tunnel instance
     t = new Tunnel();
     HashMap<String, String> options = new HashMap<String, String>();
     options.put("user", username);
     options.put("key", access_key);
     options.put("tunnelName", "MavenSingle");
 
-    //start tunnel
+    // start tunnel
     t.start(options);
     driver = new RemoteWebDriver(new URL("http://" + username + ":" + access_key + "@hub.lambdatest.com/wd/hub"),
-      capabilities);
+        capabilities);
     System.out.println("Started session");
   }
 
   @Test()
   public void testTunnel() throws Exception {
-    //Check LocalHost on XAMPP
+    // Check LocalHost on XAMPP
     driver.get("http://localhost.lambdatest.com");
     // Let's check that the item we added is added in the list.
     driver.get("https://google.com");
@@ -63,7 +62,7 @@ public class MavenSingle implements IExecutionListener {
   public void tearDown() throws Exception {
     ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
     driver.quit();
-    //close tunnel
+    // close tunnel
     t.stop();
   }
 }
