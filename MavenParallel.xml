@@ -39,7 +39,7 @@
     <test name="4 Edge">
         <parameter name="browser" value="edge"/>
         <parameter name="version" value="latest"/>
-        <parameter name="platform" value="Windows 7"/>
+        <parameter name="platform" value="Windows 10"/>
         <parameter name="resolution" value="2560x1440"/>
         <classes>
             <class name="com.lambdatest.tunnel.MavenParallel"/>

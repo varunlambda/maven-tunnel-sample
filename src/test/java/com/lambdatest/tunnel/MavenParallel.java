@@ -11,7 +11,6 @@ import org.testng.IExecutionListener;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.lambdatest.tunnel.Tunnel;
 
 public class MavenParallel implements IExecutionListener {
 
@@ -24,7 +23,7 @@ public class MavenParallel implements IExecutionListener {
   @Override
   public void onExecutionStart() {
     try {
-      //start the tunnel
+      // start the tunnel
       t = new Tunnel();
       HashMap<String, String> options = new HashMap<String, String>();
       options.put("user", username);
@@ -54,7 +53,7 @@ public class MavenParallel implements IExecutionListener {
 
     try {
       driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub"),
-        capabilities);
+          capabilities);
     } catch (MalformedURLException e) {
       System.out.println("Invalid grid URL");
     }
@@ -62,7 +61,7 @@ public class MavenParallel implements IExecutionListener {
 
   @Test()
   public void testTunnel() throws Exception {
-    //Check LocalHost on XAMPP
+    // Check LocalHost on XAMPP
     driver.get("http://localhost.lambdatest.com");
     // Let's check that the item we added is added in the list.
     driver.get("https://google.com");
@@ -79,7 +78,7 @@ public class MavenParallel implements IExecutionListener {
   @Override
   public void onExecutionFinish() {
     try {
-      //stop the Tunnel;
+      // stop the Tunnel;
       t.stop();
     } catch (Exception e) {
       e.printStackTrace();
