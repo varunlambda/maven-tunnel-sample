@@ -42,6 +42,7 @@ public class MavenSingle implements IExecutionListener {
     options.put("user", username);
     options.put("key", access_key);
     options.put("tunnelName", "MavenSingle");
+    options.put("--dns", "8.8.8.8");
 
     // start tunnel
     t.start(options);
